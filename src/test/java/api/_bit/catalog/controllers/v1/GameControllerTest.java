@@ -34,14 +34,14 @@ import static org.springframework.restdocs.request.RequestDocumentation.*;
 @AutoConfigureMockMvc(addFilters = false)
 @ExtendWith(MockitoExtension.class)
 public class GameControllerTest {
-    //@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
+
     @Autowired
     private MockMvc mockMvc;
 
     @MockitoBean
     private GameService gameService;
 
-    private String GAMES_URL = "/api/v1/games";
+    private final String GAMES_URL = "/api/v1/games";
     private GameDTO gameDTO;
 
     @BeforeEach
