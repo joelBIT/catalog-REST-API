@@ -14,7 +14,9 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(callSuper = true)
 public class Game extends BaseEntity {
 
+    @Column(unique = true)
     private String title;
+
     private int players;
     private String publisher;
     private String developer;
