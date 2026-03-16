@@ -1,8 +1,8 @@
-= RESTful Notification API Specification
+= RESTful 8-bit Catalog API Specification
 
 :doctype: book
 
-== Find a gam by id
+== Find a game by id
 
 A `GET` request is used to find a NES game by ID
 
@@ -21,7 +21,7 @@ operation::get-games[snippets='curl-request,http-request,http-response,response-
 
 
 
-= RESTful Order API Specification
+= RESTful 8-bit Catalog API Specification
 
 :doctype: book
 
