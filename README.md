@@ -1,0 +1,1 @@
+# The 8-bit Catalog REST API       [![Java CI with Maven](https://github.com/joelBIT/catalog-REST-API/actions/workflows/maven.yml/badge.svg)](https://github.com/joelBIT/catalog-REST-API/actions/workflows/maven.yml)
