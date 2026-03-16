@@ -1,0 +1,49 @@
+= RESTful Notification API Specification
+
+:doctype: book
+
+== Find a gam by id
+
+A `GET` request is used to find a NES game by ID
+
+operation::get-game-by-id[snippets='curl-request,http-request,http-response,response-fields']
+
+
+== Get all games
+
+A `GET` request is used to find all NES games
+
+operation::get-games[snippets='curl-request,http-request,http-response,response-fields']
+
+
+
+
+
+
+
+= RESTful Order API Specification
+
+:doctype: book
+
+== Find a game review by id
+
+A `GET` request is used to find a game review by ID
+
+operation::get-review-by-id[snippets='curl-request,http-request,http-response,response-fields']
+
+
+== Get all reviews for a specific game by game ID
+
+A `GET` request is used to find all reviews
+
+operation::get-reviews-by-game-id[snippets='curl-request,http-request,http-response,response-fields']
+
+
+
+== Get all reviews
+
+A `GET` request is used to find all reviews in the catalog
+
+operation::get-reviews[snippets='curl-request,http-request,http-response,response-fields']
+
+
