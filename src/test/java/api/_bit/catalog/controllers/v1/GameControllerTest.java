@@ -43,6 +43,7 @@ public class GameControllerTest {
 
     private final String GAMES_URL = "/api/v1/games";
     private GameDTO gameDTO;
+    private final LocalDateTime releaseDate = LocalDateTime.now();
 
     @BeforeEach
     void setUp() {
@@ -55,7 +56,7 @@ public class GameControllerTest {
                 .developer("Another")
                 .players(1)
                 .cover("mega_man.jpg")
-                .releaseDate(LocalDateTime.now())
+                .releaseDate(releaseDate)
                 .build();
     }
 

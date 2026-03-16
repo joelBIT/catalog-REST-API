@@ -20,7 +20,9 @@ public class GameRepositoryTest {
     @Autowired
     private GameRepository gameRepository;
 
-    private Game turtles = Game.builder()
+    private final LocalDateTime releaseDate = LocalDateTime.now();
+
+    private final Game turtles = Game.builder()
                 .category(GameCategory.ACTION)
                 .title("Turtles")
                 .description("Some old game")
@@ -28,10 +30,10 @@ public class GameRepositoryTest {
                 .developer("Another")
                 .players(1)
                 .cover("turtles.jpg")
-                .releaseDate(LocalDateTime.now())
+                .releaseDate(releaseDate)
                 .build();
 
-    private Game rygar = Game.builder()
+    private final Game rygar = Game.builder()
                 .category(GameCategory.ADVENTURE)
                 .title("Rygar")
                 .description("Very nice")
@@ -39,7 +41,7 @@ public class GameRepositoryTest {
                 .developer("Another company")
                 .players(1)
                 .cover("rygar.jpg")
-                .releaseDate(LocalDateTime.now())
+                .releaseDate(releaseDate)
                 .build();
 
     @Test
