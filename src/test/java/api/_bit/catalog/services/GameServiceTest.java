@@ -15,7 +15,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -32,7 +32,7 @@ public class GameServiceTest {
     private GameServiceImpl gameService;
 
     private final GameMapper gameMapper = new GameMapper();
-    private final LocalDateTime releaseDate = LocalDateTime.now();
+    private final LocalDate releaseDate = LocalDate.now();
 
     private final GameDTO gameDTO = GameDTO.builder()
                 .id(3L)

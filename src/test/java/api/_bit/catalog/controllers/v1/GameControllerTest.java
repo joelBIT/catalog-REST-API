@@ -19,7 +19,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.Collections;
 
 import static org.mockito.Mockito.when;
@@ -43,7 +43,7 @@ public class GameControllerTest {
 
     private final String GAMES_URL = "/api/v1/games";
     private GameDTO gameDTO;
-    private final LocalDateTime releaseDate = LocalDateTime.now();
+    private final LocalDate releaseDate = LocalDate.now();
 
     @BeforeEach
     void setUp() {

@@ -4,7 +4,8 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
+
+import java.time.LocalDate;
 
 @Entity
 @Data
@@ -26,5 +27,5 @@ public class Game extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private GameCategory category;
 
-    private LocalDateTime releaseDate;
+    private LocalDate releaseDate;
 }

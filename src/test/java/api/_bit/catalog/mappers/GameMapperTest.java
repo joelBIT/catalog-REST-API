@@ -5,7 +5,7 @@ import api._bit.catalog.domain.GameCategory;
 import api._bit.catalog.dto.GameDTO;
 import org.junit.jupiter.api.Test;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -20,7 +20,7 @@ public class GameMapperTest {
             .developer("Another")
             .players(1)
             .cover("mega_man.jpg")
-            .releaseDate(LocalDateTime.now())
+            .releaseDate(LocalDate.now())
             .build();
 
     @Test

@@ -9,7 +9,7 @@ import jakarta.validation.constraints.Positive;
 import lombok.Builder;
 import lombok.Getter;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Getter
 @Builder
@@ -40,5 +40,5 @@ public class GameDTO {
     private GameCategory category;
 
     @NotNull
-    private LocalDateTime releaseDate;
+    private LocalDate releaseDate;
 }
