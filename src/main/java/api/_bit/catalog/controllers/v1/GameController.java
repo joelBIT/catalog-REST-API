@@ -20,7 +20,7 @@ public class GameController {
     }
 
     @GetMapping("/{game_id}")
-    public GameDTO getProduct(@PathVariable("game_id") Long id) {
+    public GameDTO getGame(@PathVariable("game_id") Long id) {
         return gameService.getGameById(id);
     }
 }
