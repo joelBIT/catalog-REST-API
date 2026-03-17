@@ -47,7 +47,7 @@ public class ReviewServiceImpl implements ReviewService {
                 .collect(Collectors.toSet());
 
         log.info("Successfully fetched all reviews for game with id {}", gameId);
-        return ReviewListDTO.builder().reviews(reviews).pageSize(1000).pageNumber(0).build();
+        return ReviewListDTO.builder().reviews(reviews).pageSize(reviews.size()).pageNumber(0).build();
     }
 
     @Override
