@@ -1,0 +1,8 @@
+services:
+  man:
+    build: .
+    image: catalog/api:v1
+  catalog:
+    image: catalog/api:v1
+    ports:
+      - '80:8080'

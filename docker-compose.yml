@@ -1,4 +1,0 @@
-services:
-  man:
-    build: .
-    image: catalog/api:v1
