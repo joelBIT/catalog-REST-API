@@ -81,7 +81,7 @@ public class GameServiceTest {
         Page<Game> page = mock(Page.class);
         when(gameRepository.findAll(any(Pageable.class))).thenReturn(page);
 
-        GameListDTO result = gameService.getAllGames(1, 5);
+        GameListDTO result = gameService.getGames(1, 5);
 
         assertNotNull(result);
         verify(gameRepository, times(1)).findAll(any(Pageable.class));

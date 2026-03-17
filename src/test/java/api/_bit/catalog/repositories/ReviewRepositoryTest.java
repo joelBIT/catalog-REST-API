@@ -68,7 +68,7 @@ public class ReviewRepositoryTest {
     public void shouldReturnReviewById() {
         Game savedGamed = gameRepository.save(Game.builder().title("Turtles").category(GameCategory.ACTION).build());
         review1.setGame(savedGamed);
-        
+
         Review savedReview = reviewRepository.save(review1);
         Review result = reviewRepository.findById(savedReview.getId()).orElse(null);
 

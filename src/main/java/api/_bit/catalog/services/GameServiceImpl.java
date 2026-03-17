@@ -37,16 +37,16 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public GameListDTO getAllGames(int pageNr, int pageSize) {
-        log.info("Trying to fetch all games for page number {} and page size {}", pageNr, pageSize);
+    public GameListDTO getGames(int pageNumber, int pageSize) {
+        log.info("Trying to fetch all games for page number {} and page size {}", pageNumber, pageSize);
 
-        Pageable pageable = PageRequest.of(pageNr, pageSize);
+        Pageable pageable = PageRequest.of(pageNumber, pageSize);
         Set<GameDTO> games = gameRepository.findAll(pageable)
                 .stream()
                 .map(gameMapper::map)
                 .collect(Collectors.toSet());
 
-        log.info("Successfully fetched all games for page number {} and page size {}", pageNr, pageSize);
-        return GameListDTO.builder().games(games).pageSize(pageSize).pageNumber(pageNr).build();
+        log.info("Successfully fetched all games for page number {} and page size {}", pageNumber, pageSize);
+        return GameListDTO.builder().games(games).pageSize(pageSize).pageNumber(pageNumber).build();
     }
 }

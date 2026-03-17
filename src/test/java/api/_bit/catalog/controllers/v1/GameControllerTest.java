@@ -64,7 +64,7 @@ public class GameControllerTest {
     public void shouldRetrieveGamesForPageNumberAndPageSize() throws Exception {
         GameListDTO gameListDTO = GameListDTO.builder().pageNumber(1).pageSize(10)
                 .games(Collections.singleton(gameDTO)).build();
-        when(gameService.getAllGames(1, 10)).thenReturn(gameListDTO);
+        when(gameService.getGames(1, 10)).thenReturn(gameListDTO);
 
         ResultActions response = mockMvc.perform(get(GAMES_URL)
                 .contentType(MediaType.APPLICATION_JSON)
