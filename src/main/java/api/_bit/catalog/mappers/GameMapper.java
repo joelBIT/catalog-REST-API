@@ -10,7 +10,7 @@ public class GameMapper {
     public GameDTO map(Game game) {
         return GameDTO.builder()
                 .id(game.getId())
-                .cover(game.getCover())
+                .cover("https://tnkcekyijuynctkddkwy.supabase.co/storage/v1/object/public/covers/" + game.getCover())
                 .title(game.getTitle())
                 .category(game.getCategory())
                 .developer(game.getDeveloper())
