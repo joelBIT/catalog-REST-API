@@ -34,18 +34,6 @@ public class GameServiceTest {
     private final GameMapper gameMapper = new GameMapper();
     private final LocalDate releaseDate = LocalDate.now();
 
-    private final GameDTO gameDTO = GameDTO.builder()
-                .id(3L)
-                .category(GameCategory.ACTION)
-                .title("Turtles")
-                .description("Some old game")
-                .publisher("Capcom Co., Ltd.")
-                .developer("Another")
-                .players(1)
-                .cover("turtles.jpg")
-                .releaseDate(releaseDate)
-                .build();
-
     private final Game game = Game.builder()
             .id(3L)
             .category(GameCategory.ACTION)
@@ -65,15 +53,15 @@ public class GameServiceTest {
 
     @Test
     public void shouldGetGameDTOById() {
-        when(gameRepository.findById(gameDTO.getId())).thenReturn(Optional.of(game));
+        when(gameRepository.findById(game.getId())).thenReturn(Optional.of(game));
 
-        GameDTO result = gameService.getGameById(gameDTO.getId());
+        GameDTO result = gameService.getGameById(game.getId());
 
-        assertEquals(gameDTO.getId(), result.getId());
-        assertEquals(gameDTO.getDescription(), result.getDescription());
-        assertEquals(gameDTO.getPlayers(), result.getPlayers());
-        assertEquals(gameDTO.getTitle(), result.getTitle());
-        verify(gameRepository, times(1)).findById(gameDTO.getId());
+        assertEquals(game.getId(), result.getId());
+        assertEquals(game.getDescription(), result.getDescription());
+        assertEquals(game.getPlayers(), result.getPlayers());
+        assertEquals(game.getTitle(), result.getTitle());
+        verify(gameRepository, times(1)).findById(game.getId());
     }
 
     @Test
@@ -81,7 +69,7 @@ public class GameServiceTest {
         Page<Game> page = mock(Page.class);
         when(gameRepository.findAll(any(Pageable.class))).thenReturn(page);
 
-        GameListDTO result = gameService.getAllGames(1, 5);
+        GameListDTO result = gameService.getGames(1, 5);
 
         assertNotNull(result);
         verify(gameRepository, times(1)).findAll(any(Pageable.class));

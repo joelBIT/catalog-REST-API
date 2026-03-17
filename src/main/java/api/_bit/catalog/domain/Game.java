@@ -6,6 +6,7 @@ import lombok.experimental.SuperBuilder;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Data
@@ -26,6 +27,10 @@ public class Game extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     private GameCategory category;
+
+    @OneToMany
+    @JoinColumn(name = "game_id")
+    private List<Review> reviews;
 
     private LocalDate releaseDate;
 }

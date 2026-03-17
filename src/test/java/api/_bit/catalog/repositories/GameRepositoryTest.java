@@ -57,7 +57,7 @@ public class GameRepositoryTest {
     @Test
     public void shouldReturnGameById() {
         Game savedGame = gameRepository.save(rygar);
-        Game result = gameRepository.findById(savedGame.getId()).orElseThrow();
+        Game result = gameRepository.findById(savedGame.getId()).orElse(null);
 
         assertNotNull(result);
         assertEquals(savedGame.getId(), result.getId());
