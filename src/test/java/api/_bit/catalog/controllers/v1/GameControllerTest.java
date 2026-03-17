@@ -100,7 +100,8 @@ public class GameControllerTest {
     public void shouldReturnGameById() throws Exception {
         when(gameService.getGameById(2)).thenReturn(gameDTO);
 
-        ResultActions response = mockMvc.perform(get(GAMES_URL + "/{id}", 2).contentType(MediaType.APPLICATION_JSON));
+        ResultActions response = mockMvc.perform(get(GAMES_URL + "/{id}", 2)
+                .contentType(MediaType.APPLICATION_JSON));
 
         response.andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.title", CoreMatchers.is(gameDTO.getTitle())))
@@ -111,7 +112,8 @@ public class GameControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.publisher", CoreMatchers.is(gameDTO.getPublisher())))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.players", CoreMatchers.is(gameDTO.getPlayers())))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.releaseDate", CoreMatchers.is(gameDTO.getReleaseDate().toString())))
-                .andDo(document("get-game-by-id", pathParameters(
+                .andDo(document("get-game-by-id",
+                        pathParameters(
                                 parameterWithName("id").description("ID of the game to retrieve.")),
                         responseFields(
                                 fieldWithPath("id").description("ID of the game."),

@@ -14,9 +14,9 @@ public class ReviewController {
 
     @GetMapping
     public ReviewListDTO getReviews(
-            @RequestParam(value = "pageNr", defaultValue = "0", required = false) int pageNr,
+            @RequestParam(value = "pageNumber", defaultValue = "0", required = false) int pageNumber,
             @RequestParam(value = "pageSize", defaultValue = "15", required = false) int pageSize) {
-        return reviewService.getReviews(pageNr, pageSize);
+        return reviewService.getReviews(pageNumber, pageSize);
     }
 
     @GetMapping("/{id}")
@@ -25,7 +25,7 @@ public class ReviewController {
     }
 
     @GetMapping("/game/{id}")
-    public ReviewListDTO getReviewsByGame(@PathVariable("id") Long id) {
+    public ReviewListDTO getReviewsForGame(@PathVariable("id") Long id) {
         return reviewService.getReviewsForGame(id);
     }
 }

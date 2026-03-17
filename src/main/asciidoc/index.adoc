@@ -34,7 +34,7 @@ operation::get-review-by-id[snippets='curl-request,http-request,http-response,re
 
 == Get all reviews for a specific game by game ID
 
-A `GET` request is used to find all reviews
+A `GET` request is used to find all reviews for a specific game
 
 operation::get-reviews-by-game-id[snippets='curl-request,http-request,http-response,response-fields']
 
