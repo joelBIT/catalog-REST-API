@@ -1,6 +1,5 @@
 package api._bit.catalog.services;
 
-import api._bit.catalog.domain.Game;
 import api._bit.catalog.domain.Review;
 import api._bit.catalog.dto.ReviewDTO;
 import api._bit.catalog.dto.ReviewListDTO;
@@ -15,7 +14,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Collections;
 import java.util.Optional;
 
@@ -34,14 +34,14 @@ public class ReviewServiceTest {
     private ReviewServiceImpl reviewService;
 
     private final ReviewMapper reviewMapper = new ReviewMapper();
-    private final LocalDate date = LocalDate.now();
+    private final LocalDateTime date = LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS);
 
     private final Review review = Review.builder()
             .id(305L)
             .heading("Turtles old school")
             .review("Some old game")
             .reviewerName("Capcom Co., Ltd.")
-            .game(Game.builder().id(345L).build())
+            .gameId(345)
             .rating(1)
             .date(date)
             .build();
@@ -77,11 +77,11 @@ public class ReviewServiceTest {
 
     @Test
     public void shouldReturnAllReviewsForGame() {
-        when(reviewRepository.findByGameId(eq(review.getId()))).thenReturn(Collections.singletonList(review));
+        when(reviewRepository.findByGameId(eq(review.getGameId()))).thenReturn(Collections.singletonList(review));
 
-        ReviewListDTO result = reviewService.getReviewsForGame(review.getId());
+        ReviewListDTO result = reviewService.getReviewsForGame(review.getGameId());
 
         assertNotNull(result);
-        verify(reviewRepository, times(1)).findByGameId(eq(review.getId()));
+        verify(reviewRepository, times(1)).findByGameId(eq(review.getGameId()));
     }
 }

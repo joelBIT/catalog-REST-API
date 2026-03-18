@@ -6,7 +6,7 @@ import api._bit.catalog.dto.ReviewListDTO;
 
 public interface ReviewService {
     ReviewDTO getReviewById(long reviewId);
-    ReviewListDTO getReviewsForGame(long gameId);
+    ReviewListDTO getReviewsForGame(int gameId);
     ReviewListDTO getReviews(int pageNumber, int pageSize);
     void saveReview(Review review);
 }

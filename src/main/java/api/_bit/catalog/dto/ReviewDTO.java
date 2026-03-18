@@ -6,7 +6,7 @@ import jakarta.validation.constraints.PositiveOrZero;
 import lombok.Builder;
 import lombok.Getter;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Builder
@@ -19,7 +19,7 @@ public class ReviewDTO {
     private String reviewerName;
 
     @Positive
-    private long gameId;
+    private int gameId;
 
     @PositiveOrZero
     private int rating;
@@ -30,5 +30,5 @@ public class ReviewDTO {
     @NotBlank
     private String review;
 
-    private LocalDate date;
+    private LocalDateTime date;
 }

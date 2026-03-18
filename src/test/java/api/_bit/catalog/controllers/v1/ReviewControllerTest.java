@@ -18,7 +18,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Collections;
 
 import static org.mockito.Mockito.when;
@@ -42,7 +43,7 @@ public class ReviewControllerTest {
 
     private final String REVIEWS_URL = "/api/v1/reviews";
     private ReviewDTO reviewDTO;
-    private final LocalDate date = LocalDate.now();
+    private final LocalDateTime date = LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS);
 
     @BeforeEach
     void setUp() {
@@ -52,7 +53,7 @@ public class ReviewControllerTest {
                 .review("Some old game")
                 .reviewerName("Ken Kurtz")
                 .rating(4)
-                .gameId(300L)
+                .gameId(300)
                 .date(date)
                 .build();
     }
@@ -102,7 +103,7 @@ public class ReviewControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.review", CoreMatchers.is(reviewDTO.getReview())))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.reviewerName", CoreMatchers.is(reviewDTO.getReviewerName())))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.rating", CoreMatchers.is(reviewDTO.getRating())))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.date", CoreMatchers.is(reviewDTO.getDate().toString())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.date", CoreMatchers.is(reviewDTO.getDate().truncatedTo(ChronoUnit.SECONDS).toString())))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.gameId", CoreMatchers.is((int) reviewDTO.getGameId())))
                 .andDo(document("get-review-by-id", pathParameters(
                                 parameterWithName("id").description("ID of the review to retrieve.")),

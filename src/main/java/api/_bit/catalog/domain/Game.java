@@ -1,13 +1,11 @@
 package api._bit.catalog.domain;
 
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Data
@@ -35,10 +33,6 @@ public class Game {
 
     @Enumerated(EnumType.STRING)
     private GameCategory category;
-
-    @OneToMany
-    @JoinColumn(name = "game_id")
-    private List<Review> reviews;
 
     private LocalDate releaseDate;
     private LocalDateTime createdAt;

@@ -25,7 +25,7 @@ public class ReviewController {
     }
 
     @GetMapping("/game/{id}")
-    public ReviewListDTO getReviewsForGame(@PathVariable("id") Long id) {
+    public ReviewListDTO getReviewsForGame(@PathVariable("id") int id) {
         return reviewService.getReviewsForGame(id);
     }
 }

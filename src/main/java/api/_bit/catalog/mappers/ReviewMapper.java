@@ -14,7 +14,7 @@ public class ReviewMapper {
                 .heading(review.getHeading())
                 .rating(review.getRating())
                 .reviewerName(review.getReviewerName())
-                .gameId(review.getGame().getId())
+                .gameId(review.getGameId())
                 .date(review.getDate())
                 .build();
     }

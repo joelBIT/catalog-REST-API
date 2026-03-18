@@ -38,9 +38,8 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
-    public ReviewListDTO getReviewsForGame(long gameId) {
+    public ReviewListDTO getReviewsForGame(int gameId) {
         log.info("Trying to fetch all reviews for game with id {}", gameId);
-
 
         Set<ReviewDTO> reviews = reviewRepository.findByGameId(gameId)
                 .stream()

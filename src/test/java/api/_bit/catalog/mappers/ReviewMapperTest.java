@@ -1,11 +1,10 @@
 package api._bit.catalog.mappers;
 
-import api._bit.catalog.domain.Game;
 import api._bit.catalog.domain.Review;
 import api._bit.catalog.dto.ReviewDTO;
 import org.junit.jupiter.api.Test;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -16,9 +15,9 @@ public class ReviewMapperTest {
             .heading("Mega Man is nice")
             .review("Very nice indeed")
             .reviewerName("Ken Kurtz")
-            .game(Game.builder().id(560L).build())
+            .gameId(560)
             .rating(4)
-            .date(LocalDate.now())
+            .date(LocalDateTime.now())
             .build();
 
     @Test
