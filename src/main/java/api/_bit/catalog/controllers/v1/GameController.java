@@ -14,9 +14,9 @@ public class GameController {
 
     @GetMapping
     public GameListDTO getGames(
-            @RequestParam(value = "pageNr", defaultValue = "0", required = false) int pageNr,
+            @RequestParam(value = "pageNumber", defaultValue = "0", required = false) int pageNumber,
             @RequestParam(value = "pageSize", defaultValue = "15", required = false) int pageSize) {
-        return gameService.getGames(pageNr, pageSize);
+        return gameService.getGames(pageNumber, pageSize);
     }
 
     @GetMapping("/{game_id}")

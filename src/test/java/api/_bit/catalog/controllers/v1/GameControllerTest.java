@@ -68,7 +68,7 @@ public class GameControllerTest {
 
         ResultActions response = mockMvc.perform(get(GAMES_URL)
                 .contentType(MediaType.APPLICATION_JSON)
-                .param("pageNr","1")
+                .param("pageNumber","1")
                 .param("pageSize", "10"));
 
         response.andExpect(MockMvcResultMatchers.status().isOk())
@@ -76,7 +76,7 @@ public class GameControllerTest {
                         .is(gameListDTO.getGames().size())))
                 .andDo(document("get-games",
                         queryParameters(
-                                parameterWithName("pageNr").description("The number of the page to retrieve."),
+                                parameterWithName("pageNumber").description("The number of the page to retrieve."),
                                 parameterWithName("pageSize").description("The number of games retrieved in a page.")
                         ),
                         responseFields(

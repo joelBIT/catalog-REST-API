@@ -8,7 +8,7 @@ public enum GameCategory {
     FIGHTING("Fighting"),
     PUZZLE("Puzzle"),
     RACING("Racing"),
-    ROLE_PLAYING("Role_playing"),
+    ROLE_PLAYING("Role-Playing"),
     SHOOTER("Shooter"),
     SIMULATION("Simulation"),
     SPORTS("Sports"),

@@ -21,7 +21,7 @@ public class ApplicationListener {
     @Autowired
     private GameService gameService;
 
-    @Value("classpath:games_test.json")
+    @Value("classpath:games.json")
     Resource resourceFile;
 
     @EventListener
