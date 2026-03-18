@@ -23,6 +23,9 @@ public class Game extends BaseEntity {
     private String publisher;
     private String developer;
     private String cover;
+    private boolean rom;
+
+    @Lob
     private String description;
 
     @Enumerated(EnumType.STRING)

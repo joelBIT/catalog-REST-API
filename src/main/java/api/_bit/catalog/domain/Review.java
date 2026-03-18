@@ -23,8 +23,11 @@ public class Review extends BaseEntity {
     @Lob
     private String review;
 
+    @Column(name = "review_date")
+    private LocalDate date;
+
     private int rating;
     private String heading;
     private String reviewerName;
-    private LocalDate date;
+    private String reviewerId;
 }

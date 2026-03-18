@@ -31,7 +31,8 @@ public class GameServiceTest {
     @InjectMocks
     private GameServiceImpl gameService;
 
-    private final GameMapper gameMapper = new GameMapper();
+    private final String COVERS_URL = "https://tnkcekyijuynctkddkwy.supabase.co/storage/v1/object/public/covers/";
+    private final GameMapper gameMapper = new GameMapper(COVERS_URL);
     private final LocalDate releaseDate = LocalDate.now();
 
     private final Game game = Game.builder()

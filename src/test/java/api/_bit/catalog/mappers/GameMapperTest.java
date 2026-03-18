@@ -10,8 +10,9 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GameMapperTest {
-    private GameMapper gameMapper = new GameMapper();
-    private Game game = Game.builder()
+    private final String COVERS_URL = "https://tnkcekyijuynctkddkwy.supabase.co/storage/v1/object/public/covers/";
+    private final GameMapper gameMapper = new GameMapper(COVERS_URL);
+    private final Game game = Game.builder()
             .id(3L)
             .category(GameCategory.ACTION)
             .title("Mega Man")
@@ -34,7 +35,7 @@ public class GameMapperTest {
         assertEquals(game.getDeveloper(), result.getDeveloper());
         assertEquals(game.getPublisher(), result.getPublisher());
         assertEquals(game.getPlayers(), result.getPlayers());
-        assertEquals(game.getCover(), result.getCover());
+        assertEquals(COVERS_URL + game.getCover(), result.getCover());
         assertEquals(game.getReleaseDate(), result.getReleaseDate());
     }
 }

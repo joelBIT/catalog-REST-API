@@ -10,6 +10,7 @@ import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 import org.springframework.boot.jdbc.test.autoconfigure.AutoConfigureTestDatabase;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -37,6 +38,7 @@ public class ReviewRepositoryTest {
                 .reviewerName("Capcom Co., Ltd.")
                 .rating(1)
                 .date(date)
+                .createdAt(LocalDateTime.now())
                 .build();
 
         review2 = Review.builder()
@@ -45,15 +47,18 @@ public class ReviewRepositoryTest {
                 .reviewerName("Not Capcom Co., Ltd.")
                 .rating(4)
                 .date(date)
+                .createdAt(LocalDateTime.now())
                 .build();
     }
 
     @Test
     public void shouldReturnAllReviews() {
-        Game savedGamed1 = gameRepository.save(Game.builder().title("Turtles").category(GameCategory.ACTION).build());
+        Game savedGamed1 = gameRepository.save(Game.builder().title("Turtles")
+                .category(GameCategory.ACTION).createdAt(LocalDateTime.now()).build());
         review1.setGame(savedGamed1);
 
-        Game savedGamed2 = gameRepository.save(Game.builder().title("Rygar").category(GameCategory.ADVENTURE).build());
+        Game savedGamed2 = gameRepository.save(Game.builder().title("Rygar")
+                .category(GameCategory.ADVENTURE).createdAt(LocalDateTime.now()).build());
         review2.setGame(savedGamed2);
 
         reviewRepository.save(review1);
@@ -66,7 +71,8 @@ public class ReviewRepositoryTest {
 
     @Test
     public void shouldReturnReviewById() {
-        Game savedGamed = gameRepository.save(Game.builder().title("Turtles").category(GameCategory.ACTION).build());
+        Game savedGamed = gameRepository.save(Game.builder().title("Turtles")
+                .category(GameCategory.ACTION).createdAt(LocalDateTime.now()).build());
         review1.setGame(savedGamed);
 
         Review savedReview = reviewRepository.save(review1);
@@ -84,7 +90,8 @@ public class ReviewRepositoryTest {
 
     @Test
     public void shouldReturnReviewsByGameId() {
-        Game savedGamed = gameRepository.save(Game.builder().title("Turtles").category(GameCategory.ACTION).build());
+        Game savedGamed = gameRepository.save(Game.builder().title("Turtles")
+                .category(GameCategory.ACTION).createdAt(LocalDateTime.now()).build());
         review1.setGame(savedGamed);
 
         Review savedReview = reviewRepository.save(review1);

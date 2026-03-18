@@ -8,6 +8,7 @@ import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 import org.springframework.boot.jdbc.test.autoconfigure.AutoConfigureTestDatabase;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -31,6 +32,7 @@ public class GameRepositoryTest {
                 .players(1)
                 .cover("turtles.jpg")
                 .releaseDate(releaseDate)
+                .createdAt(LocalDateTime.now())
                 .build();
 
     private final Game rygar = Game.builder()
@@ -42,6 +44,7 @@ public class GameRepositoryTest {
                 .players(1)
                 .cover("rygar.jpg")
                 .releaseDate(releaseDate)
+                .createdAt(LocalDateTime.now())
                 .build();
 
     @Test
