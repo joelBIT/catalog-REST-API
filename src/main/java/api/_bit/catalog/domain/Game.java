@@ -5,7 +5,6 @@ import lombok.*;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -35,5 +34,4 @@ public class Game {
     private GameCategory category;
 
     private LocalDate releaseDate;
-    private LocalDateTime createdAt;
 }
