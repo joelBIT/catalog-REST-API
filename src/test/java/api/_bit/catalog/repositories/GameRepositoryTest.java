@@ -24,6 +24,7 @@ public class GameRepositoryTest {
     private final LocalDate releaseDate = LocalDate.now();
 
     private final Game turtles = Game.builder()
+                .id(30L)
                 .category(GameCategory.ACTION)
                 .title("Turtles")
                 .description("Some old game")
@@ -36,6 +37,7 @@ public class GameRepositoryTest {
                 .build();
 
     private final Game rygar = Game.builder()
+                .id(44L)
                 .category(GameCategory.ADVENTURE)
                 .title("Rygar")
                 .description("Very nice")

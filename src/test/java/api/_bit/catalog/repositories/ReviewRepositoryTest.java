@@ -33,31 +33,31 @@ public class ReviewRepositoryTest {
     @BeforeEach
     void setUp() {
         review1 = Review.builder()
+                .id(1L)
                 .heading("Turtles old school")
                 .review("Some old game")
                 .reviewerName("Capcom Co., Ltd.")
                 .rating(1)
                 .date(date)
-                .createdAt(LocalDateTime.now())
                 .build();
 
         review2 = Review.builder()
+                .id(2L)
                 .heading("Rygar rules")
                 .review("Very nice")
                 .reviewerName("Not Capcom Co., Ltd.")
                 .rating(4)
                 .date(date)
-                .createdAt(LocalDateTime.now())
                 .build();
     }
 
     @Test
     public void shouldReturnAllReviews() {
-        Game savedGamed1 = gameRepository.save(Game.builder().title("Turtles")
+        Game savedGamed1 = gameRepository.save(Game.builder().id(30L).title("Turtles")
                 .category(GameCategory.ACTION).createdAt(LocalDateTime.now()).build());
         review1.setGame(savedGamed1);
 
-        Game savedGamed2 = gameRepository.save(Game.builder().title("Rygar")
+        Game savedGamed2 = gameRepository.save(Game.builder().id(44L).title("Rygar")
                 .category(GameCategory.ADVENTURE).createdAt(LocalDateTime.now()).build());
         review2.setGame(savedGamed2);
 
@@ -71,7 +71,7 @@ public class ReviewRepositoryTest {
 
     @Test
     public void shouldReturnReviewById() {
-        Game savedGamed = gameRepository.save(Game.builder().title("Turtles")
+        Game savedGamed = gameRepository.save(Game.builder().id(30L).title("Turtles")
                 .category(GameCategory.ACTION).createdAt(LocalDateTime.now()).build());
         review1.setGame(savedGamed);
 
@@ -90,7 +90,7 @@ public class ReviewRepositoryTest {
 
     @Test
     public void shouldReturnReviewsByGameId() {
-        Game savedGamed = gameRepository.save(Game.builder().title("Turtles")
+        Game savedGamed = gameRepository.save(Game.builder().id(30L).title("Turtles")
                 .category(GameCategory.ACTION).createdAt(LocalDateTime.now()).build());
         review1.setGame(savedGamed);
 

@@ -1,0 +1,41 @@
+[
+ {
+   "id": 1,
+   "created_at": "2024-11-24 08:40:40.662614+00",
+   "title": "10-Yard Fight",
+   "developer": "Irem",
+   "publisher": "Nintendo",
+   "category": "Sports",
+   "cover": "NES-TY-USA.webp",
+   "description": "10-Yard Fight is a game by Irem for Arcades and the Nintendo Entertainment System. The game revolves around American football and features five different levels of difficulty, including high school, college, pro, playoffs, and Super Bowl, with the latter being the hardest. It has generally been accepted as an awful game by both gamers and critics alike.",
+   "players": 2,
+   "release_date": "1985-10-18",
+   "rom": true
+ },
+ {
+   "id": 2,
+   "created_at": "2024-11-24 08:40:40.662614+00",
+   "title": "1942",
+   "developer": "Capcom Co., Ltd.",
+   "publisher": "Capcom Co., Ltd.",
+   "category": "Shooter",
+   "cover": "NES-NF-USA.webp",
+   "description": "1942 is a video game produced by Capcom. Originally an arcade game, it was later released on the Nintendo Entertainment System and the Game Boy Color. The game was later followed by 1943: The Battle of Midway. As the name implies, it takes place during World War II in 1942 (while the sequel takes place during the same war the next year). Despite being made by a Japanese company (Capcom), the game requires you to head to Japan and defeat the entire fleet.",
+   "players": 2,
+   "release_date": "1985-12-11",
+   "rom": true
+ },
+ {
+   "id": 3,
+   "created_at": "2024-11-24 08:40:40.662614+00",
+   "title": "1943: The Battle of Midway",
+   "developer": "Capcom Co., Ltd.",
+   "publisher": "Capcom Co., Ltd.",
+   "category": "Shooter",
+   "cover": "NES-43-USA.webp",
+   "description": "The game (1943: The Battle of Midway) is set in the Pacific theater of World War II, off the coast of the Midway Atoll with the Imperial Japanese Armed Forces as the main group of antagonists. The player takes the role of an unnamed U.S. Navy ace pilot seeking revenge to defeat the Japanese naval aerial forces that attacked the American aircraft carrier, destroy all Japanese air and sea forces, fly through the 16 stages of play, and ultimately destroy the battleship Yamato, the game's final boss. 11 of these stages consist of an air-to-sea battle with a battleship or an aircraft carrier as the stage boss, while 5 stages consist of an all-aerial battle, either against a squadron of multiple strategic bombers or a single heavy bomber, the latter requires the player to shoot its engines to destroy it.\n\nAs in 1942, players pilot a P-38 Lightning. Controls are also similar: button 1 fires main weapons, and button 2 performs two special actions: one of three special lightning attacks in exchange for some of the player's fuel, or a loop maneuver like in 1942 if buttons 1 and 2 are pressed simultaneously. Players now have only one life, in the form of a large \"fuel\" meter, constantly depleting, but refillable by collecting various powerups. In 2-player mode, when both players overlap their planes on screen, the energy bar can be transferred from the player with more fuel to the player with less. Destroying a complete formation of red enemy planes will result in a power-up, such as a health boost or a new main weapon.",
+   "players": 2,
+   "release_date": "1988-06-20",
+   "rom": true
+ }
+]

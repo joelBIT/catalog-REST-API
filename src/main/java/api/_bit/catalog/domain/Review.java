@@ -1,21 +1,22 @@
 package api._bit.catalog.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
+import lombok.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder(toBuilder = true)
-@EqualsAndHashCode(callSuper = true)
-public class Review extends BaseEntity {
+@Builder
+@EqualsAndHashCode
+@Table(name = "REVIEWS")
+public class Review {
+
+    @Id
+    private Long id;    // Is assigned manually due to existing data being migrated and no new reviews will be added in the future. Thus, reviews already have given IDs and should not get new ones in this database.
 
     @ManyToOne
     private Game game;
@@ -30,4 +31,5 @@ public class Review extends BaseEntity {
     private String heading;
     private String reviewerName;
     private String reviewerId;
+    private LocalDateTime createdAt;
 }

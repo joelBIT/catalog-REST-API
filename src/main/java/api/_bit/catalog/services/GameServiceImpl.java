@@ -1,5 +1,6 @@
 package api._bit.catalog.services;
 
+import api._bit.catalog.domain.Game;
 import api._bit.catalog.dto.GameDTO;
 import api._bit.catalog.dto.GameListDTO;
 import api._bit.catalog.exceptions.NotFoundException;
@@ -48,5 +49,10 @@ public class GameServiceImpl implements GameService {
 
         log.info("Successfully fetched all games for page number {} and page size {}", pageNumber, pageSize);
         return GameListDTO.builder().games(games).pageSize(pageSize).pageNumber(pageNumber).build();
+    }
+
+    @Override
+    public void saveGame(Game game) {
+        gameRepository.save(game);
     }
 }

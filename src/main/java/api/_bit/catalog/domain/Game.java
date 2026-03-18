@@ -6,15 +6,20 @@ import lombok.experimental.SuperBuilder;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder(toBuilder = true)
-@EqualsAndHashCode(callSuper = true)
-public class Game extends BaseEntity {
+@Builder
+@EqualsAndHashCode
+@Table(name = "GAMES")
+public class Game {
+
+    @Id
+    private Long id;    // Is assigned manually due to existing data being migrated and no new games will be added in the future. Thus, games already have given IDs and should not get new ones in this database.
 
     @Column(unique = true)
     private String title;
@@ -36,4 +41,5 @@ public class Game extends BaseEntity {
     private List<Review> reviews;
 
     private LocalDate releaseDate;
+    private LocalDateTime createdAt;
 }

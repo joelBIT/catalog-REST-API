@@ -1,5 +1,6 @@
 package api._bit.catalog.services;
 
+import api._bit.catalog.domain.Review;
 import api._bit.catalog.dto.ReviewDTO;
 import api._bit.catalog.dto.ReviewListDTO;
 import api._bit.catalog.exceptions.NotFoundException;
@@ -62,5 +63,10 @@ public class ReviewServiceImpl implements ReviewService {
 
         log.info("Successfully fetched all reviews for page number {} and page size {}", pageNumber, pageSize);
         return ReviewListDTO.builder().reviews(reviews).pageSize(pageSize).pageNumber(pageNumber).build();
+    }
+
+    @Override
+    public void saveReview(Review review) {
+        reviewRepository.save(review);
     }
 }
