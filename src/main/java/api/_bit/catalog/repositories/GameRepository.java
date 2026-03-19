@@ -13,4 +13,10 @@ public interface GameRepository extends JpaRepository<Game, Long>  {
             nativeQuery = true
     )
     List<String> findDistinctDevelopers();
+
+    @Query(
+            value = "SELECT DISTINCT g.publisher FROM GAMES g",
+            nativeQuery = true
+    )
+    List<String> findDistinctPublishers();
 }
