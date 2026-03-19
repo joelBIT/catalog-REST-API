@@ -10,13 +10,13 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 @Slf4j
-public class DeveloperServiceImpl implements DeveloperService {
+public class PublisherServiceImpl implements PublisherService {
     private final GameRepository gameRepository;
 
     @Override
-    public List<String> getDevelopers() {
-        log.info("Fetching all distinct developer companies for all games");
+    public List<String> getPublishers() {
+        log.info("Fetching all distinct publisher companies for all games");
 
-        return gameRepository.findDistinctDevelopers();
+        return gameRepository.findDistinctPublishers();
     }
 }
