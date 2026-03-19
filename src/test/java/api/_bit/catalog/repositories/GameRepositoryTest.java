@@ -89,4 +89,21 @@ public class GameRepositoryTest {
 
         assertEquals(2, result.size());
     }
+
+    @Test
+    public void shouldReturnAllPublishers() {
+        gameRepository.save(turtles);
+        gameRepository.save(rygar);
+        Game megaMan = Game.builder()
+                .id(304L)
+                .category(GameCategory.ACTION)
+                .title("Mega man")
+                .publisher("Another")
+                .build();
+        gameRepository.save(megaMan);
+
+        List<String> result = gameRepository.findDistinctPublishers();
+
+        assertEquals(3, result.size());
+    }
 }
