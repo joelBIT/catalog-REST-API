@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GameMapperTest {
-    private final String COVERS_URL = "https://tnkcekyijuynctkddkwy.supabase.co/storage/v1/object/public/covers/";
+    private final String COVERS_URL = "/covers-url/";
     private final GameMapper gameMapper = new GameMapper(COVERS_URL);
     private final Game game = Game.builder()
             .id(3L)
