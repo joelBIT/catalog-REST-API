@@ -1,5 +1,6 @@
 package api._bit.catalog.services;
 
+import api._bit.catalog.mappers.GameMapper;
 import api._bit.catalog.repositories.GameRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,9 +24,12 @@ public class PublisherServiceTest {
     @InjectMocks
     private PublisherServiceImpl publisherService;
 
+    private final String COVERS_URL = "/covers-url/";
+    private final GameMapper gameMapper = new GameMapper(COVERS_URL);
+
     @BeforeEach
     void setUp() {
-        publisherService = new PublisherServiceImpl(gameRepository);
+        publisherService = new PublisherServiceImpl(gameRepository, gameMapper);
     }
 
     @Test

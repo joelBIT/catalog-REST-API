@@ -22,7 +22,7 @@ public class DeveloperController {
     }
 
     @GetMapping("/{developer_name}/games")
-    public List<GameDTO> getGame(@PathVariable("developer_name") String developerName) {
+    public List<GameDTO> getGamesByDeveloper(@PathVariable("developer_name") String developerName) {
         return developerService.getGamesByDeveloper(developerName);
     }
 }
