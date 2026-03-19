@@ -15,3 +15,17 @@ A `GET` request is used to find all NES games
 
 operation::get-games[snippets='curl-request,http-request,http-response,response-fields']
 
+
+== Get all developers
+
+A `GET` request is used to find all distinct names of the developer companies of the NES games
+
+operation::get-developers[snippets='curl-request,http-request,http-response,response-fields']
+
+
+== Get all categories
+
+A `GET` request is used to find all categories of the NES games
+
+operation::get-categories[snippets='curl-request,http-request,http-response,response-fields']
+
