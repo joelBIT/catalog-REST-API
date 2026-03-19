@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.restdocs.test.autoconfigure.AutoConfigureRestDocs;
 import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
@@ -17,8 +18,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.mockito.Mockito.when;
+import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.get;
+import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
+import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 
+@AutoConfigureRestDocs
 @WebMvcTest(DeveloperController.class)
 @ExtendWith(MockitoExtension.class)
 public class DeveloperControllerTest {
@@ -42,6 +47,11 @@ public class DeveloperControllerTest {
 
         response.andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.size()", CoreMatchers
-                        .is(2)));
+                        .is(2)))
+                .andDo(document("get-developers",
+                        responseFields(
+                                fieldWithPath("[]").description("A list of distinct names of the developer companies of the games in the catalog.")
+                        )
+                ));
     }
 }
