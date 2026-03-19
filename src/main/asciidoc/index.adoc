@@ -29,6 +29,15 @@ operation::get-developers[snippets='curl-request,http-request,http-response,resp
 
 
 
+== Find all games by developer
+
+A `GET` request is used to find all NES game by developer
+
+operation::get-games-by-developer[snippets='curl-request,http-request,http-response,response-fields']
+
+
+
+
 
 == Get all publishers
 
@@ -36,6 +45,14 @@ A `GET` request is used to find all distinct names of the publisher companies of
 
 operation::get-publishers[snippets='curl-request,http-request,http-response,response-fields']
 
+
+
+
+== Find all games by publisher
+
+A `GET` request is used to find all NES game by publisher
+
+operation::get-games-by-publisher[snippets='curl-request,http-request,http-response,response-fields']
 
 
 

@@ -1,7 +1,6 @@
 package api._bit.catalog.services;
 
 import api._bit.catalog.domain.Game;
-import api._bit.catalog.domain.GameCategory;
 import api._bit.catalog.dto.GameDTO;
 import api._bit.catalog.mappers.GameMapper;
 import api._bit.catalog.repositories.GameRepository;
