@@ -10,8 +10,7 @@ An OpenAPI definition of the 8-bit catalog API is found at [catalog-api.joel-rol
 
 <img width="1461" height="970" alt="swagger" src="https://github.com/user-attachments/assets/c7017da7-8144-4731-83cf-0aee93b7fd1c" />
 
+<img width="1461" height="970" alt="swagger2" src="https://github.com/user-attachments/assets/33125b30-0803-4030-a513-570a8caafc5b" />
 
-<br />
 
-<img width="1461" height="970" alt="swagger2" src="https://github.com/user-attachments/assets/29d0eff2-464a-402c-b8f7-1ef526a3c405" />
 
