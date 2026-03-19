@@ -106,4 +106,24 @@ public class GameRepositoryTest {
 
         assertEquals(3, result.size());
     }
+
+    @Test
+    public void shouldReturnGamesByPublisher() {
+        gameRepository.save(turtles);
+        gameRepository.save(rygar);
+
+        List<Game> result = gameRepository.findByPublisher(turtles.getPublisher());
+
+        assertEquals(1, result.size());
+    }
+
+    @Test
+    public void shouldReturnGamesByDeveloper() {
+        gameRepository.save(turtles);
+        gameRepository.save(rygar);
+
+        List<Game> result = gameRepository.findByDeveloper(turtles.getDeveloper());
+
+        assertEquals(1, result.size());
+    }
 }

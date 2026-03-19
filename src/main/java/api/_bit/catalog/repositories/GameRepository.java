@@ -19,4 +19,7 @@ public interface GameRepository extends JpaRepository<Game, Long>  {
             nativeQuery = true
     )
     List<String> findDistinctPublishers();
+
+    List<Game> findByDeveloper(String developerName);
+    List<Game> findByPublisher(String publisherName);
 }

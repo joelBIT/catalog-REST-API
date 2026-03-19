@@ -15,7 +15,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import java.time.LocalDate;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -33,7 +32,6 @@ public class GameServiceTest {
 
     private final String COVERS_URL = "/covers-url/";
     private final GameMapper gameMapper = new GameMapper(COVERS_URL);
-    private final LocalDate releaseDate = LocalDate.now();
 
     private final Game game = Game.builder()
             .id(3L)
@@ -44,7 +42,6 @@ public class GameServiceTest {
             .developer("Another")
             .players(1)
             .cover("turtles.jpg")
-            .releaseDate(releaseDate)
             .build();
 
     @BeforeEach
