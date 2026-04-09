@@ -21,7 +21,6 @@ public class DeveloperController {
 
     @GetMapping
     @Operation(summary = "Get a list of all NES game developers.", description = "Returns a list of all names of the companies that have developed NES games.")
-
     public List<String> getDevelopers() {
         return developerService.getDevelopers();
     }

@@ -15,7 +15,6 @@ public class CategoryController {
 
     @GetMapping
     @Operation(summary = "Get a list of all NES game categories in the 8-bit Catalog.", description = "Returns a list of all NES game categories used in the 8-bit Catalog.")
-
     public List<String> getCategories() {
         return Arrays.stream(GameCategory.values()).map(gameCategory -> gameCategory.label).toList();
     }
